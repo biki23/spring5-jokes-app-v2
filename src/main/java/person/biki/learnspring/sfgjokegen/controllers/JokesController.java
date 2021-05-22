@@ -12,7 +12,7 @@ public class JokesController {
     public JokesController(ChuckNorrisQuoteGenerator chuckNorrisQuoteGenerator) {
         this.chuckNorrisQuoteGenerator = chuckNorrisQuoteGenerator;
     }
-    @RequestMapping("/")
+    @RequestMapping({"/", ""})
     public String getQuote(Model model) {
         model.addAttribute("joke", chuckNorrisQuoteGenerator.getRandomQuote());
         return "index";
